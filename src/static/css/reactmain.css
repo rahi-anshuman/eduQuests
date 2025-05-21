@@ -1,0 +1,13 @@
+.react-main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    /* border: 1px solid red; */
+    flex-flow: row;
+    column-gap: 6.5rem;
+    /* row-gap: 1.4rem; */
+    flex-wrap: wrap;
+    width: 80%;
+    margin-left: 10%;
+}
+
