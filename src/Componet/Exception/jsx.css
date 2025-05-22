@@ -79,9 +79,9 @@
 }
 @keyframes animate1{
     from{
-        left:calc(100%-40px);
+        left:calc(100% - 40px);
         transform: rotate(360deg);
-        transform: translateX(100%-40px);
+        transform: translateX(100% - 40px);
     }
     to{
         left: -20px;
