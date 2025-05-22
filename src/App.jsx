@@ -9,6 +9,7 @@ import ReactMain from './Componet/React/ReactMain';
 import Language from './Componet/Language';
 import { Routes,Route } from 'react-router-dom';
 import MainComponent from './Componet/MainComponent';
+import SpringMain from './Componet/SpringMain';
 
 function App() {
   
@@ -20,11 +21,11 @@ function App() {
         <Route path='/' element={<MainComponent/>}>
         {/* <Route index element = {<Dashboard/>}/> */}
         <Route path='/learning' element={<Language/>}/>
-        {/* <Route exact path ='/react' element = {<ReactMain/>}/>
-
-        <Route path='/spring-boot' element={<ReactMain/>}/>
-        <Route path='*' element = {<Ex404/>}/> */}
-                <Route path ='/react/:type' element = {<Content/>}/>
+        <Route exact path ='/react' element = {<ReactMain/>}/>
+        <Route path ='/react/:type' element = {<Content/>}/>
+        <Route path='/spring-boot' element={<SpringMain/>}/>
+        <Route path ='/spring-boot/:type' element = {<Content/>}/>
+        <Route path='*' element = {<Ex404/>}/>
         </Route>
       </Routes>
 

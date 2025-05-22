@@ -3,7 +3,7 @@ import '../static/css/card.css'
 import { getImageUrl } from '../Util/getImageUrl'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { hooks } from '../Data/React/Hooks'
-import { getComponetReactData } from '../Util/getFileData'
+import { getComponetReactData, getComponetspringboottData } from '../Util/getFileData'
 // import  react_basic  from '../static/img/react_basic.png'
 
 
@@ -12,9 +12,9 @@ function Card(props) {
   const loction = useLocation();
   console.log("From card location", location)
   const functionClick = () => {
-    console .log(" Called card function")
+    console .log(" Called card function", props.title)
     if (loction.pathname.includes('/learning')) {
-      if (props.title === 'react')
+      if (props.title.toLowerCase() === 'react')
         navigate('/react', { state: hooks });
       else if (props.title === 'spring-boot')
         navigate('/spring-boot');
@@ -23,6 +23,11 @@ function Card(props) {
       const url_redirect = props.title.replace(" ", "").toLowerCase();
       const data = getComponetReactData(url_redirect);
       navigate(`/react/${url_redirect}`, { state: data })
+    }
+    else if(loction.pathname.includes('spring-boot')){
+      const url_redirect = props.title.replace(" ", "").toLowerCase();
+      const data = getComponetspringboottData(url_redirect);
+      navigate(`/spring-boot/${url_redirect}`, { state: data })
     }
 
   }

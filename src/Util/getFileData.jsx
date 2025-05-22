@@ -1,4 +1,6 @@
 import { hooks } from "../Data/React/Hooks";
+import { about_spring } from "../Data/spring-boot/about_spring";
+import { annotations } from "../Data/spring-boot/annotations";
 function getComponetReactData(url_data){
     if(url_data === "/react/hooks")
         return hooks;
@@ -14,4 +16,11 @@ function getComponetReactData(url_data){
         return [{"title":"state management content is in progress"}];
 }
 
-export {getComponetReactData};
+function getComponetspringboottData(url_data){
+    if(url_data === '/spring-boot/basics')
+        return about_spring;
+    else if(url_data === '/spring-boot/annotation')
+        return annotations;
+}
+
+export {getComponetReactData, getComponetspringboottData};
